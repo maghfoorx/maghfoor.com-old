@@ -1,4 +1,4 @@
-import { createClient, groq } from 'next-sanity'
+import variables from "../styles/variables.module.scss";
 import Link from 'next/link'
 
 export default async function Home() {
@@ -9,6 +9,7 @@ export default async function Home() {
         Home Page
         <br></br>
         <Link href={"/blog"}>Check out my blog</Link>
+        <p className={variables.title}>testing Sass</p>
       </div>
     </main>
   )
