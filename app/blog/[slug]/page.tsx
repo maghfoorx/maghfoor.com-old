@@ -1,4 +1,6 @@
-import { createClient, groq } from "next-sanity";
+import { client } from "@/utils/sanityClient";
+import { Metadata } from "next";
+import { groq } from "next-sanity";
 
 interface PostPageProps {
     params: {
@@ -6,24 +8,22 @@ interface PostPageProps {
     }
 }
 
-const projectId = process.env.SANITY_PROJECT_ID
+const query = groq`
+    *[_type=="post" && slug.current == $slug][0]{...}
+    `;
 
-const client = createClient({
-    projectId,
-    dataset: 'production',
-    apiVersion: "2023-03-25",
-    useCdn: false
-})
+export async function generateMetadata({ params: { slug } }: PostPageProps): Promise<Metadata> {
+
+    const blogPost = await client.fetch(query, { slug })
+    return ({
+        title: blogPost.title,
+        description: "This blog is written by Maghfoor Ahmed."
+    })
+
+}
 
 export default async function PostPage({ params: { slug } }: PostPageProps) {
-    console.log(slug)
-
-    const query = groq`
-    *[_type=="post" && slug.current == $slug][0]{...}
-    `
     const blogPost = await client.fetch(query, { slug });
-
-    console.log("the blog post is", blogPost)
     return (
         <div>
             {blogPost.title}
