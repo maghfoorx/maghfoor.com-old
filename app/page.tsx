@@ -1,4 +1,5 @@
 import { createClient, groq } from 'next-sanity'
+import Link from 'next/link'
 
 export default async function Home() {
 
@@ -6,6 +7,8 @@ export default async function Home() {
     <main>
       <div>
         Home Page
+        <br></br>
+        <Link href={"/blog"}>Check out my blog</Link>
       </div>
     </main>
   )
