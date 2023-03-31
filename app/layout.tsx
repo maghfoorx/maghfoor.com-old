@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer'
 import '../styles/globals.scss'
 
 export const metadata = {
@@ -17,6 +18,7 @@ export default function RootLayout({
         <meta httpEquiv="Content-Language" content="en" />
       </head>
       <body>{children}</body>
+      <Footer />
     </html>
   )
 }
