@@ -11,7 +11,6 @@ export default async function Home() {
         <Image src={logo} alt="logo" className="logo" />
         <h1>Maghfoor Ahmed</h1>
         <Link href={"/blog"}>blog</Link>
-
       </div>
     </main>
   )
