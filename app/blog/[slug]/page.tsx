@@ -1,6 +1,7 @@
 import { client } from "@/utils/sanityClient";
 import { Metadata } from "next";
-import { groq } from "next-sanity";
+import { groqQueries } from "@/utils/groqQueries";
+import PortableText from "react-portable-text";
 
 interface PostPageProps {
     params: {
@@ -8,13 +9,9 @@ interface PostPageProps {
     }
 }
 
-const query = groq`
-    *[_type=="post" && slug.current == $slug][0]{...}
-    `;
-
 export async function generateMetadata({ params: { slug } }: PostPageProps): Promise<Metadata> {
 
-    const blogPost = await client.fetch(query, { slug })
+    const blogPost = await client.fetch(groqQueries.getPosts, { slug })
     return ({
         title: blogPost.title,
         description: "This blog is written by Maghfoor Ahmed."
@@ -23,10 +20,11 @@ export async function generateMetadata({ params: { slug } }: PostPageProps): Pro
 }
 
 export default async function PostPage({ params: { slug } }: PostPageProps) {
-    const blogPost = await client.fetch(query, { slug });
+    const blogPost = await client.fetch(groqQueries.getPosts, { slug });
+    console.log(blogPost)
     return (
         <div>
-            {blogPost.title}
+            <PortableText content={blogPost.body} />
         </div>
     )
 }
