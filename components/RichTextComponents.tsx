@@ -12,7 +12,6 @@ function urlFor(source: any) {
 
 export const RichTextComponents = {
     image: (props: any) => {
-        console.log(props)
         return (
             <div className='next-image-div'>
                 <Image
