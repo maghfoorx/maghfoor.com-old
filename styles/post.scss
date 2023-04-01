@@ -1,0 +1,49 @@
+.post-nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1rem 1rem;
+  background: rgba(255, 255, 0, 0.6);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
+
+.nav-title {
+  font-weight: bolder;
+  font-size: 1.5rem;
+  margin: auto 0;
+}
+
+a {
+  color: black;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: auto 0;
+}
+
+.nav-logo {
+  object-fit: contain;
+  animation: rotate-logo 5s linear infinite;
+}
+
+@keyframes rotate-logo {
+  25% {
+    transform: rotateZ(90deg);
+  }
+  50% {
+    transform: rotateZ(180deg);
+  }
+  75% {
+    transform: rotateZ(270deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.post-section {
+  margin: 1rem 1rem;
+  padding: 1.5rem;
+  background: rgba(255, 228, 196, 0.6);
+  border-radius: 0.5rem;
+}
