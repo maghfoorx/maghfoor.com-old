@@ -18,7 +18,6 @@ export default function RootLayout({
         <meta httpEquiv="Content-Language" content="en" />
       </head>
       <body>{children}</body>
-      <Footer />
     </html>
   )
 }
