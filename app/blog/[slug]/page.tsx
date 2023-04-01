@@ -3,6 +3,9 @@ import { Metadata } from "next";
 import { groqQueries } from "@/utils/groqQueries";
 import PortableText from "react-portable-text";
 import { RichTextComponents } from "@/components/RichTextComponents";
+import Link from "next/link";
+import Image from "next/image"
+import "../../../styles/post.scss"
 
 interface PostPageProps {
     params: {
@@ -22,16 +25,19 @@ export async function generateMetadata({ params: { slug } }: PostPageProps): Pro
 
 export default async function PostPage({ params: { slug } }: PostPageProps) {
     const blogPost = await client.fetch(groqQueries.getPost, { slug });
-    console.log(blogPost)
     return (
         <div>
-            <section>
+            <div className="post-nav-bar">
+                <Link href={"/blog"}>back</Link>
+                <p className="nav-title">Maghfoor&apos;s Blog</p>
+                <Image src={"/logo.png"} alt="logo" width={70} height={70} className="nav-logo" />
+            </div>
+            <section className="post-section">
                 <p>Published: {new Date(blogPost.publishedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
-                <p>Author: Maghfoor Ahmed</p>
+                <article>
+                    <PortableText content={blogPost.body} serializers={RichTextComponents} />
+                </article>
             </section>
-            <article>
-                <PortableText content={blogPost.body} serializers={RichTextComponents} />
-            </article>
         </div>
     )
 }
