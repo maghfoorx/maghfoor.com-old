@@ -12,7 +12,7 @@ interface PostPageProps {
 
 export async function generateMetadata({ params: { slug } }: PostPageProps): Promise<Metadata> {
 
-    const blogPost = await client.fetch(groqQueries.getPosts, { slug })
+    const blogPost = await client.fetch(groqQueries.getPost, { slug })
     return ({
         title: blogPost.title,
         description: "This blog is written by Maghfoor Ahmed."
@@ -21,11 +21,17 @@ export async function generateMetadata({ params: { slug } }: PostPageProps): Pro
 }
 
 export default async function PostPage({ params: { slug } }: PostPageProps) {
-    const blogPost = await client.fetch(groqQueries.getPosts, { slug });
-    console.log(blogPost.body)
+    const blogPost = await client.fetch(groqQueries.getPost, { slug });
+    console.log(blogPost)
     return (
         <div>
-            <PortableText content={blogPost.body} serializers={RichTextComponents} />
+            <section>
+                <p>Published: {new Date(blogPost.publishedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
+                <p>Author: Maghfoor Ahmed</p>
+            </section>
+            <article>
+                <PortableText content={blogPost.body} serializers={RichTextComponents} />
+            </article>
         </div>
     )
 }

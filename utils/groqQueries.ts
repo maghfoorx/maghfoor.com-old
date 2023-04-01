@@ -1,7 +1,7 @@
 import { groq } from "next-sanity";
 
 export const groqQueries = {
-  getPosts: groq`
+  getPost: groq`
     *[_type=="post" && slug.current == $slug][0]{...}
     `,
 };
