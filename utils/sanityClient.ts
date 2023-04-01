@@ -7,5 +7,5 @@ export const client = createClient({
   projectId,
   dataset,
   apiVersion: "2023-03-25",
-  useCdn: true,
+  useCdn: false,
 });
