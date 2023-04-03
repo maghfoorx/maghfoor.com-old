@@ -2,7 +2,7 @@ import { client } from "@/utils/sanityClient";
 import { Metadata } from "next";
 import { groqQueries } from "@/utils/groqQueries";
 import PortableText from "react-portable-text";
-import { RichTextComponents } from "@/components/RichTextComponents";
+import { RichTextComponents, urlFor } from "@/components/RichTextComponents";
 import Link from "next/link";
 import Image from "next/image"
 import "../../../styles/post.scss"
@@ -25,6 +25,7 @@ export async function generateMetadata({ params: { slug } }: PostPageProps): Pro
 
 export default async function PostPage({ params: { slug } }: PostPageProps) {
     const blogPost = await client.fetch(groqQueries.getPost, { slug });
+    console.log(blogPost)
     return (
         <div>
             <div className="post-nav-bar">
@@ -33,6 +34,10 @@ export default async function PostPage({ params: { slug } }: PostPageProps) {
                 <Image src={"/logo.png"} alt="logo" width={70} height={70} className="nav-logo" />
             </div>
             <section className="post-section">
+                {blogPost.mainImage &&
+                    <div className="main-image-div">
+                        <Image src={urlFor(blogPost.mainImage.asset).url()} alt="Main Image" fill className="main-image" />
+                    </div>}
                 <p>Published: {new Date(blogPost.publishedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
                 <article>
                     <PortableText content={blogPost.body} serializers={RichTextComponents} />
