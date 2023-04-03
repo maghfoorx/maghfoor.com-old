@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: space-between;
   margin: 1rem 1rem;
-  background: rgba(255, 255, 0, 0.6);
+  background: #f1d5bb;
   border-radius: 0.5rem;
   padding: 1.5rem;
 }
@@ -46,4 +46,15 @@ a {
   padding: 1.5rem;
   background: rgba(255, 228, 196, 0.6);
   border-radius: 0.5rem;
+}
+
+.main-image-div {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  margin: 1rem auto;
+}
+
+.main-image {
+  object-fit: cover;
 }
