@@ -6,6 +6,7 @@ import { RichTextComponents, urlFor } from "@/components/RichTextComponents";
 import Image from "next/image"
 import "../../../styles/post.scss"
 import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
 
 interface PostPageProps {
     params: {
@@ -39,6 +40,7 @@ export default async function PostPage({ params: { slug } }: PostPageProps) {
                     <PortableText content={blogPost.body} serializers={RichTextComponents} />
                 </article>
             </section>
+            <Footer />
         </div>
     )
 }
