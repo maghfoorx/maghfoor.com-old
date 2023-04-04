@@ -26,7 +26,6 @@ export async function generateMetadata({ params: { slug } }: PostPageProps): Pro
 
 export default async function PostPage({ params: { slug } }: PostPageProps) {
     const blogPost = await client.fetch(groqQueries.getPost, { slug });
-    console.log(blogPost)
     return (
         <div>
             <NavBar href="/blog" />

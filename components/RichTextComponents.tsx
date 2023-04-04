@@ -7,7 +7,7 @@ const projectId = process.env.SANITY_PROJECT_ID!;
 const builder = imageUrlBuilder({ projectId, dataset: "production" });
 
 export function urlFor(source: any) {
-    return builder.image(source).width(400).height(400)
+    return builder.image(source)
 }
 
 export const RichTextComponents = {

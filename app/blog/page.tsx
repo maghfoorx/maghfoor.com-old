@@ -33,12 +33,11 @@ export default async function Blog() {
 }
 
 function BlogPost({ blogPost }: any): JSX.Element {
-    console.log(blogPost)
     return (
         <div className="blog-post-summary">
-            <div className="image-wrapper">
+            {blogPost.mainImage && <div className="image-wrapper">
                 <Image src={urlFor(blogPost.mainImage.asset).url()} alt={blogPost.title} fill className="main-image" />
-            </div>
+            </div>}
             <Link href={`/blog/${blogPost.slug.current}`}>
                 <h3>{blogPost.title}</h3>
             </Link>
