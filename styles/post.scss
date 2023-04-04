@@ -1,31 +1,3 @@
-.post-nav-bar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 1rem 1rem;
-  background: #f1d5bb;
-  border-radius: 0.5rem;
-  padding: 1.5rem;
-}
-
-.nav-title {
-  font-weight: bolder;
-  font-size: 1.5rem;
-  margin: auto 0;
-}
-
-a {
-  color: black;
-  font-size: 1.2rem;
-  text-align: center;
-  margin: auto 0;
-}
-
-.nav-logo {
-  object-fit: contain;
-  animation: rotate-logo 5s linear infinite;
-}
-
 @keyframes rotate-logo {
   25% {
     transform: rotateZ(90deg);
