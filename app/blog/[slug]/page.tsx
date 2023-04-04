@@ -3,9 +3,9 @@ import { Metadata } from "next";
 import { groqQueries } from "@/utils/groqQueries";
 import PortableText from "react-portable-text";
 import { RichTextComponents, urlFor } from "@/components/RichTextComponents";
-import Link from "next/link";
 import Image from "next/image"
 import "../../../styles/post.scss"
+import NavBar from "@/components/NavBar";
 
 interface PostPageProps {
     params: {
@@ -28,11 +28,7 @@ export default async function PostPage({ params: { slug } }: PostPageProps) {
     console.log(blogPost)
     return (
         <div>
-            <div className="post-nav-bar">
-                <Link href={"/blog"}>back</Link>
-                <p className="nav-title">Maghfoor&apos;s Blog</p>
-                <Image src={"/logo.png"} alt="logo" width={70} height={70} className="nav-logo" />
-            </div>
+            <NavBar href="/blog" />
             <section className="post-section">
                 {blogPost.mainImage &&
                     <div className="main-image-div">
