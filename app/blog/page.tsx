@@ -5,6 +5,7 @@ import "../../styles/navBar.scss"
 import { urlFor } from "@/components/RichTextComponents";
 import Image from "next/image";
 import "../../styles/blogpage.scss"
+import Footer from "@/components/Footer";
 
 const projectId = process.env.SANITY_PROJECT_ID
 
@@ -13,7 +14,7 @@ const client = createClient({
     dataset: 'production',
     apiVersion: "2023-03-25",
     useCdn: false
-})
+});
 
 export default async function Blog() {
     const blogs = await client.fetch(groq`*[_type == "post"]`);
@@ -26,6 +27,7 @@ export default async function Blog() {
                     return <BlogPost key={post._id} blogPost={post} />
                 })}
             </section>
+            <Footer />
         </div>
     )
 }
