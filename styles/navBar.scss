@@ -3,9 +3,14 @@
   flex-direction: row;
   justify-content: space-between;
   margin: 1rem 1rem;
-  background: #f1d5bb;
+  background: #f77c64;
+  box-shadow: 4px 4px 4px rgb(196, 155, 155);
   border-radius: 0.5rem;
   padding: 1.5rem;
+}
+
+a {
+  text-decoration: none;
 }
 
 .nav-title {
