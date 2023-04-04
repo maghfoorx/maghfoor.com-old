@@ -9,7 +9,7 @@ export default function NavBar({ href }: NavBarProps) {
         <div>
             <div className="nav-bar">
                 {href && <Link href={href}>back</Link>}
-                <p className="nav-title">Maghfoor&apos;s Blog</p>
+                <Link href={"/blog"}><p className="nav-title">Maghfoor&apos;s Blog</p></Link>
                 <Link href={"/"}><Image src={"/logo.png"} alt="logo" width={70} height={70} className="nav-logo" /></Link>
             </div>
         </div>
