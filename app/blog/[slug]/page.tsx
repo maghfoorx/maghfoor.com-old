@@ -7,11 +7,28 @@ import Image from "next/image"
 import "../../../styles/post.scss"
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
+import { groq } from "next-sanity";
 
 interface PostPageProps {
     params: {
         slug: string;
     }
+}
+
+export const revalidate = 86400;
+
+export async function generateStaticParams() {
+    const query = groq`*[_type=='post']
+    {
+        slug
+    }`;
+
+    const slugs = await client.fetch(query)
+    const slugRoutes = slugs.map((slug: any) => slug.slug.current)
+
+    return slugRoutes.map((slug: any) => ({
+        slug: slug
+    }))
 }
 
 export async function generateMetadata({ params: { slug } }: PostPageProps): Promise<Metadata> {
