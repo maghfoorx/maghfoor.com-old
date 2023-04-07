@@ -4,11 +4,6 @@
   padding: 0;
 }
 
-a {
-  text-decoration: none;
-  color: black;
-}
-
-.globals {
+:root {
   background: grey;
 }

@@ -1,4 +1,4 @@
-import '../styles/globals.scss'
+import '../styles/globals.css'
 import { Anek_Devanagari } from "next/font/google"
 
 const anek = Anek_Devanagari({
