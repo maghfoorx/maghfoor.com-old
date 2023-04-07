@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import imageUrlBuilder from "@sanity/image-url";
-import "../styles/richText.scss"
+import styles from "../styles/richText.module.scss"
 
 const projectId = process.env.SANITY_PROJECT_ID!;
 
@@ -13,12 +13,12 @@ export function urlFor(source: any) {
 export const RichTextComponents = {
     image: (props: any) => {
         return (
-            <div className='next-image-div'>
+            <div className={styles['next-image-div']}>
                 <Image
                     src={urlFor(props.asset).url()!}
                     alt={props.alt}
                     fill
-                    className='next-image'
+                    className={styles['next-image']}
                 />
             </div>
         )

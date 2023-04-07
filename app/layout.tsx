@@ -1,5 +1,9 @@
-import Footer from '@/components/Footer'
 import '../styles/globals.scss'
+import { Anek_Devanagari } from "next/font/google"
+
+const anek = Anek_Devanagari({
+  subsets: ["latin"],
+})
 
 export const metadata = {
   title: 'Maghfoor Ahmed',
@@ -17,7 +21,7 @@ export default function RootLayout({
         <meta name="google" content="notranslate" />
         <meta httpEquiv="Content-Language" content="en" />
       </head>
-      <body>{children}</body>
+      <body className={anek.className}>{children}</body>
     </html>
   )
 }

@@ -1,8 +1,8 @@
-import "../styles/footer.scss"
+import styles from "../styles/footer.module.scss"
 
 export default function Footer() {
     return (
-        <section className="footer-comp">
+        <section className={styles['footer-comp']}>
             <p>assembled by maghfoor.</p>
         </section>
     )

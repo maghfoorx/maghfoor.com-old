@@ -4,10 +4,10 @@ import { groqQueries } from "@/utils/groqQueries";
 import PortableText from "react-portable-text";
 import { RichTextComponents, urlFor } from "@/components/RichTextComponents";
 import Image from "next/image"
-import "../../../styles/post.scss"
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { groq } from "next-sanity";
+import styles from '../../../styles/post.module.scss'
 
 interface PostPageProps {
     params: {
@@ -46,10 +46,10 @@ export default async function PostPage({ params: { slug } }: PostPageProps) {
     return (
         <div>
             <NavBar href="/blog" />
-            <section className="post-section">
+            <section className={styles['post-section']}>
                 {blogPost.mainImage &&
-                    <div className="main-image-div">
-                        <Image src={urlFor(blogPost.mainImage.asset).url()} alt="Main Image" fill className="main-image" />
+                    <div className={styles['main-image-div']}>
+                        <Image src={urlFor(blogPost.mainImage.asset).url()} alt="Main Image" fill className={styles['main-image']} />
                     </div>}
                 <p>Published: {new Date(blogPost.publishedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
                 <article>

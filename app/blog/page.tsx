@@ -1,11 +1,10 @@
 import NavBar from "@/components/NavBar";
 import { createClient, groq } from "next-sanity";
 import Link from "next/link";
-import "../../styles/navBar.scss"
 import { urlFor } from "@/components/RichTextComponents";
 import Image from "next/image";
-import "../../styles/blogpage.scss"
 import Footer from "@/components/Footer";
+import styles from '../../styles/blogpage.module.scss'
 
 const projectId = process.env.SANITY_PROJECT_ID
 
@@ -22,7 +21,7 @@ export default async function Blog() {
     return (
         <div>
             <NavBar />
-            <section className="blogs-section">
+            <section className={styles['blogs-section']}>
                 {blogs?.map((post: any) => {
                     return <BlogPost key={post._id} blogPost={post} />
                 })}
@@ -34,9 +33,9 @@ export default async function Blog() {
 
 function BlogPost({ blogPost }: any): JSX.Element {
     return (
-        <div className="blog-post-summary">
-            {blogPost.mainImage && <div className="image-wrapper">
-                <Image src={urlFor(blogPost.mainImage.asset).url()} alt={blogPost.title} fill className="main-image" />
+        <div className={styles['blog-post-summary']}>
+            {blogPost.mainImage && <div className={styles['image-wrapper']}>
+                <Image src={urlFor(blogPost.mainImage.asset).url()} alt={blogPost.title} fill className={styles['main-image']} />
             </div>}
             <Link href={`/blog/${blogPost.slug.current}`}>
                 <h3>{blogPost.title}</h3>
