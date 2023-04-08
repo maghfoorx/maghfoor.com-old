@@ -5,15 +5,7 @@ import { urlFor } from "@/components/RichTextComponents";
 import Image from "next/image";
 import Footer from "@/components/Footer";
 import styles from '../../styles/blogpage.module.scss'
-
-const projectId = process.env.SANITY_PROJECT_ID
-
-const client = createClient({
-    projectId,
-    dataset: 'production',
-    apiVersion: "2023-03-25",
-    useCdn: false
-});
+import { client } from "@/utils/sanityClient";
 
 export default async function Blog() {
     const blogs = await client.fetch(groq`*[_type == "post"]`);
