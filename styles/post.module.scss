@@ -21,6 +21,16 @@
   box-shadow: 4px 4px 4px 4px rgb(114, 114, 114);
 }
 
+.article-body {
+  p {
+    font-size: 1.5rem;
+  }
+  code {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+}
+
 .main-image-div {
   position: relative;
   width: 100%;

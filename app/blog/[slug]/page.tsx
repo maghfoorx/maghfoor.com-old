@@ -52,7 +52,7 @@ export default async function PostPage({ params: { slug } }: PostPageProps) {
                         <Image src={urlFor(blogPost.mainImage.asset).url()} alt="Main Image" fill className={styles['main-image']} />
                     </div>}
                 <p>Published: {new Date(blogPost.publishedAt).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</p>
-                <article>
+                <article className={styles['article-body']}>
                     <PortableText content={blogPost.body} serializers={RichTextComponents} />
                 </article>
             </section>
