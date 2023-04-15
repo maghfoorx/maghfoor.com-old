@@ -11,7 +11,11 @@ export default async function Home() {
       <div className={styles["home-page"]}>
         <Image src={logo} alt="logo" className={styles["logo"]} />
         <h1>Maghfoor Ahmed</h1>
-        <Link href={"/blog"}>blog</Link>
+        <div className={styles['links']}>
+        <Link href={"/blog"} className={`${styles['links__item']} ${styles['links__item-blog']}`}>Blog</Link>
+        <a href='https://github.com/maghfoor-dev' className={`${styles['links__item']} ${styles['links__item-github']}`}>GitHub</a>
+        </div>
+        <p>maghfoor.dev@gmail.com</p>
       </div>
     </main>
   )
