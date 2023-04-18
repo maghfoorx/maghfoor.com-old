@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import styles from "../styles/navBar.module.scss"
+import styles from "./navBar.module.scss"
 type NavBarProps = {
     href?: string
 }
