@@ -1,6 +1,6 @@
 import { getPostMetaData } from "@/utils/postsFunctions"
-import Hello from "../../posts/hello.mdx"
-import Link from "next/link";
+
+
 
 export default function BlogPage() {
     const result = getPostMetaData();
