@@ -1,5 +1,6 @@
 import fs from "fs";
 import matter from "gray-matter";
+import { serialize } from "v8";
 
 export function getPostMetaData() {
     const folder = "posts/"
@@ -14,6 +15,7 @@ export function getPostMetaData() {
             title: matterResult.data.title,
             date: matterResult.data.date,
             slug: fileName.replace(".mdx", ""),
+            content: matterResult.content
         }
     })
     return posts;
