@@ -17,14 +17,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="bg-red-500">
+    <html lang="en" className="bg-slate-300 scroll-smooth">
       <body
-        className={`${montserrat.className} antialiased max-w-4xl mb-40 flex flex-col md:flex-row mx-4 mt-8 lg:mx-auto`}
+        className={`${montserrat.className} antialiased mb-40 flex flex-col items-center justify-center mx-4 mt-8 lg:mx-auto`}
       >
-        <main className="min-w-0 px-2 md:px-0">
-          <Navbar />
-          {children}
-        </main>
+        <Navbar />
+        {children}
       </body>
     </html>
   );

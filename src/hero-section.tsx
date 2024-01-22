@@ -17,7 +17,7 @@ const highlightsData = [
 
 export default function HeroSection() {
   return (
-    <div className="flex flex-col gap-4">
+    <section className="flex flex-col items-center justify-center gap-7 max-w-4xl mx-auto px-2 md:px-4">
       <h1 className="font-bold text-5xl md:text-7xl">HEY! I AM MAGHFOOR</h1>
       <p>
         A full stack engineer with a strong passion to continuously improve
@@ -39,6 +39,6 @@ export default function HeroSection() {
           );
         })}
       </div>
-    </div>
+    </section>
   );
 }
