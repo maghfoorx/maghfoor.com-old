@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-slate-300 scroll-smooth">
       <body
-        className={`${montserrat.className} antialiased mb-40 flex flex-col items-center justify-center mx-4 mt-8 lg:mx-auto`}
+        className={`${montserrat.className} antialiased flex flex-col items-center justify-center mx-4 mt-8 lg:mx-auto`}
       >
         <Navbar />
         {children}
