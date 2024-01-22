@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Navbar() {
   return (
     <nav className="flex flex-row items-center justify-center gap-4">
-      <Image src={logo} alt="logo" width={50} height={50} />
+      <Image src={logo} alt="logo" width={50} height={50} className="logo" />
       <Link href={"#experience"}>Experience</Link>
     </nav>
   );
