@@ -20,3 +20,25 @@
   .logo {
     animation: rotate-logo 5s linear infinite;
   }
+
+  .plane-img {
+    background-image: url('../public/images/plane.png');
+    background-repeat: no-repeat;
+    background-position-y: -50%;
+    background-position-x: -20%;
+  }
+
+  @layer utilities {
+      .plane-img {
+        background-image: url('../public/images/plane.png');
+        background-repeat: no-repeat;
+        background-position-y: -20%;
+        background-position-x: -40%;
+      }
+      .plane-img-sm {
+        background-image: url('../public/images/plane.png');
+        background-repeat: no-repeat;
+        background-position-y: -50%;
+        background-position-x: 100%;
+      }
+  }
