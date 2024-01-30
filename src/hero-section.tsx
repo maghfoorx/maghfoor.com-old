@@ -18,26 +18,27 @@ const highlightsData = [
 export default function HeroSection() {
   return (
     <section className="flex flex-col items-center justify-center gap-7 max-w-4xl mx-auto px-2 md:px-4">
-      <h1 className="font-bold text-5xl md:text-7xl">HEY! I AM MAGHFOOR</h1>
-      <p>
-        A full stack engineer with a strong passion to continuously improve
-        myself. I have strong experience with building full stack applications
-        from design to deployment.
-      </p>
-      <h2 className="font-bold text-3xl md:text-5xl">HIGHLIGHTS</h2>
-      <div className="flex flex-col md:flex-row justify-between gap-4">
-        {highlightsData.map((highlight) => {
-          return (
-            <div key={highlight.image.blurDataURL}>
-              <Image
-                src={highlight.image}
-                alt=""
-                className="object-contain md:object-cover h-[250px] md:h-[322px] w-[455px] rounded-md"
-              />
-              <p>{highlight.description}</p>
-            </div>
-          );
-        })}
+      <div>
+        <h1 className="font-bold text-5xl md:text-7xl">HEY! I AM MAGHFOOR</h1>
+        <p>Full Stack Software Engineer</p>
+        <p>Currently At IAG Loyalty</p>
+      </div>
+      <div>
+        <h2 className="font-bold text-3xl md:text-5xl">HIGHLIGHTS</h2>
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          {highlightsData.map((highlight) => {
+            return (
+              <div key={highlight.image.blurDataURL}>
+                <Image
+                  src={highlight.image}
+                  alt=""
+                  className="object-contain md:object-cover h-[250px] md:h-[322px] w-[455px] rounded-md mx-auto"
+                />
+                <p>{highlight.description}</p>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
