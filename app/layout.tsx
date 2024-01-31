@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="bg-slate-300 scroll-smooth">
+    <html lang="en" className="scroll-smooth">
       <body
         className={`${montserrat.className} antialiased flex flex-col items-center justify-center mx-4 mt-8 lg:mx-auto`}
       >

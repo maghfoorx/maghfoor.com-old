@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  background-image: url("../public/images/pattern.png");
+}
+
 @keyframes rotate-logo {
     25% {
       transform: rotateZ(90deg);
