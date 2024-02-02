@@ -12,8 +12,8 @@ export default function Navbar() {
         animate={{ rotate: 180, scale: 1 }}
         transition={{
           type: "spring",
-          stiffness: 260,
-          damping: 20,
+          stiffness: 500,
+          damping: 50,
         }}
       >
         <Image src={logo} alt="logo" width={50} height={50} className="logo" />
