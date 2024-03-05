@@ -18,10 +18,18 @@ export default function Navbar() {
       >
         <Image src={logo} alt="logo" width={50} height={50} className="logo" />
       </motion.div>
-      <Link href={"https://github.com/maghfoor-dev"} target="_blank">
+      <Link
+        href={"https://github.com/maghfoor-dev"}
+        target="_blank"
+        className="hover:underline"
+      >
         GitHub
       </Link>
-      <Link href={"https://www.linkedin.com/in/maghfoor/"} target="_blank">
+      <Link
+        href={"https://www.linkedin.com/in/maghfoor/"}
+        target="_blank"
+        className="hover:underline"
+      >
         LinkedIn
       </Link>
     </nav>
