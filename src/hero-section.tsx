@@ -17,7 +17,7 @@ const highlightsData = [
 
 export default function HeroSection() {
   return (
-    <section className="flex flex-col items-center justify-center gap-7 max-w-4xl mx-auto px-2 md:px-4">
+    <section className="flex flex-col items-center justify-center gap-7 max-w-4xl p-4 mx-auto">
       <div>
         <h1 className="font-bold text-5xl md:text-7xl">HEY! I AM MAGHFOOR</h1>
         <p>Full Stack Software Engineer</p>
@@ -32,7 +32,7 @@ export default function HeroSection() {
                 <Image
                   src={highlight.image}
                   alt=""
-                  className="object-contain md:object-cover h-[250px] md:h-[322px] w-[455px] rounded-md mx-auto"
+                  className="object-contain md:object-cover md:h-[322px] md:w-[455px] rounded-md mx-auto"
                 />
                 <p>{highlight.description}</p>
               </div>

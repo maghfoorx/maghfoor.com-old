@@ -4,6 +4,11 @@
 
 html {
   background-image: url("../public/images/pattern.png");
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
 }
 
 @keyframes rotate-logo {
