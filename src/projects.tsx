@@ -17,7 +17,7 @@ const projectsData = [
   {
     image: familyCarePicture,
     description:
-      "Building an offline desktop application using the Tauri framework (Rust + React) for a homeopathic pharamcy to help them manage their medicine database and online orders. The application allows to seemelssly print labels for online orders.",
+      "Building an offline desktop application using the Tauri framework (Rust + React) for a homeopathic pharamacy to help them manage their medicine database and online orders. The application allows to seemelssly print labels for online orders.",
   },
 ];
 
