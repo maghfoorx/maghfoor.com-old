@@ -38,6 +38,7 @@ export default function HeroSection() {
                   width={400}
                   height={300}
                   className="border border-black"
+                  loading="lazy"
                 />
                 <p>{highlight.description}</p>
               </div>
