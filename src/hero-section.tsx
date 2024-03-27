@@ -25,14 +25,14 @@ export default function HeroSection() {
       </div>
       <div>
         <h2 className="font-bold text-3xl md:text-5xl">HIGHLIGHTS</h2>
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="flex flex-col md:flex-row justify-between gap-4">
           {highlightsData.map((highlight) => {
             return (
               <div key={highlight.image.blurDataURL}>
                 <Image
                   src={highlight.image}
                   alt=""
-                  className="object-contain md:object-cover md:h-[322px] md:w-[455px] rounded-md mx-auto"
+                  className="object-contain md:max-h-[300px] md:max-w-[400px]"
                 />
                 <p>{highlight.description}</p>
               </div>
