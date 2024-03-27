@@ -1,5 +1,6 @@
 import ramadhanChallenge from "../public/images/ramadhan-challenge.png";
 import jobDescriptionGenerator from "../public/images/generate-job-description.png";
+import familyCarePicture from "../public/images/family-care.png";
 import Image from "next/image";
 
 const projectsData = [
@@ -12,6 +13,11 @@ const projectsData = [
     image: jobDescriptionGenerator,
     description:
       "I used OpenAI API to build a job description generator. This generated responses are live streamed to the user for great user experience. Stripe payment integration to purchase credits.",
+  },
+  {
+    image: familyCarePicture,
+    description:
+      "Building an offline desktop application using the Tauri framework (Rust + React) for a homeopathic pharamcy to help them manage their medicine database and online orders. The application allows to seemelssly print labels for online orders.",
   },
 ];
 
