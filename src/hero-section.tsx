@@ -17,22 +17,27 @@ const highlightsData = [
 
 export default function HeroSection() {
   return (
-    <section className="flex flex-col items-center justify-center gap-7 max-w-4xl p-4 mx-auto">
-      <div>
+    <section className="max-w-4xl p-4 mx-auto">
+      <div className="mb-4">
         <h1 className="font-bold text-5xl md:text-7xl">HEY! I AM MAGHFOOR</h1>
         <p>Full Stack Software Engineer</p>
         <p>Currently At IAG Loyalty</p>
       </div>
       <div>
-        <h2 className="font-bold text-3xl md:text-5xl">HIGHLIGHTS</h2>
-        <div className="flex flex-col md:flex-row justify-between gap-4">
+        <h2 className="font-bold text-3xl md:text-4xl">HIGHLIGHTS</h2>
+        <div className="">
           {highlightsData.map((highlight) => {
             return (
-              <div key={highlight.image.blurDataURL}>
+              <div
+                key={highlight.image.blurDataURL}
+                className="flex flex-col md:flex-row gap-2 py-2"
+              >
                 <Image
                   src={highlight.image}
                   alt=""
-                  className="object-contain md:max-h-[300px] md:max-w-[400px]"
+                  width={400}
+                  height={300}
+                  className="border border-black"
                 />
                 <p>{highlight.description}</p>
               </div>
