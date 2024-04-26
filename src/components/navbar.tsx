@@ -39,6 +39,13 @@ export default function Navbar() {
         >
           LinkedIn
         </Link>
+        <Link
+          href={"mailto:maghfoor.dev@gmail.com"}
+          target="_blank"
+          className="hover:underline"
+        >
+          Email Me
+        </Link>
       </nav>
       <div></div>
     </header>
