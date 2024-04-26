@@ -30,7 +30,7 @@ export default function HeroSection() {
       </div>
       <div>
         <h2 className="font-semibold text-3xl md:text-4xl">HIGHLIGHTS</h2>
-        <div className="flex flex-col md:flex-row gap-4">
+        <div className="flex flex-col md:flex-row gap-4 items-stretch">
           {highlightsData.map((highlight) => {
             return (
               <div key={highlight.image.blurDataURL} className="">
@@ -43,7 +43,7 @@ export default function HeroSection() {
                   loading="lazy"
                 /> */}
                 {/* <p>{highlight.description}</p> */}
-                <Card className="max-w-[400px]">
+                <Card className="max-w-[400px] h-full">
                   <Image
                     src={highlight.image}
                     alt=""
