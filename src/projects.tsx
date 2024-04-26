@@ -43,7 +43,7 @@ export default function Projects() {
                 key={project.image.blurDataURL}
                 href={project.link}
                 target="_blank"
-                className="border-solid border-2 border-transparent hover:border-black rounded-md"
+                className="border-solid border-2 border-transparent hover:border-black rounded-md group"
               >
                 <Card className="flex flex-col md:flex-row h-full">
                   <Image
@@ -57,6 +57,9 @@ export default function Projects() {
                   <div className="p-2 flex flex-col gap-2">
                     <p className="font-bold">{project.title}</p>
                     <p>{project.description}</p>
+                    <p className="group-hover:underline text-blue-600">
+                      Check it out
+                    </p>
                   </div>
                 </Card>
               </Link>
