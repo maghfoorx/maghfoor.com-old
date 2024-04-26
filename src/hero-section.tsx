@@ -34,6 +34,7 @@ export default function HeroSection() {
             <Link
               href={"https://www.iagloyalty.com/"}
               className="underline hover:text-blue-600"
+              target="_blank"
             >
               IAG Loyalty
             </Link>
@@ -41,6 +42,7 @@ export default function HeroSection() {
             <Link
               href={"https://shopping.ba.com"}
               className="underline hover:text-red-600"
+              target="_blank"
             >
               British Airways Estore
             </Link>{" "}
