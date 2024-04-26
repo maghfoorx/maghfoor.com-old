@@ -14,7 +14,7 @@ const highlightsData = [
     image: starAward,
     title: "Received Company Wide Star Award",
     description:
-      "I received a company wide Star Award just after 7 months of working at IAGL. This award is given those who accomplish a lot and make a meaningful difference at the company.",
+      "Achieved the company-wide Star Award at IAGL in just 7 months for significant contributions. Recognised for making a difference!",
   },
 ];
 
