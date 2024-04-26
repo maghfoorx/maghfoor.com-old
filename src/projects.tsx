@@ -51,7 +51,7 @@ export default function Projects() {
                     alt=""
                     width={400}
                     height={300}
-                    className="object-contain rounded-l-md"
+                    className="object-contain rounded-t-md md:rounded-t-none md:rounded-l-md"
                     loading="lazy"
                   />
                   <div className="flex flex-col gap-2 p-2">
