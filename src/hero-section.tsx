@@ -22,19 +22,18 @@ export default function HeroSection() {
   return (
     <section className="max-w-4xl p-4 mx-auto">
       <div className="mb-4">
-        <h1 className="font-bold text-5xl md:text-7xl">HEY! I AM MAGHFOOR</h1>
+        <h1 className="font-semibold text-5xl md:text-7xl">
+          HEY! I AM MAGHFOOR
+        </h1>
         <p>Full Stack Software Engineer</p>
         <p>Currently At IAG Loyalty</p>
       </div>
       <div>
-        <h2 className="font-bold text-3xl md:text-4xl">HIGHLIGHTS</h2>
-        <div className="flex flex-col md:flex-row md:gap-4">
+        <h2 className="font-semibold text-3xl md:text-4xl">HIGHLIGHTS</h2>
+        <div className="flex flex-col md:flex-row gap-4">
           {highlightsData.map((highlight) => {
             return (
-              <div
-                key={highlight.image.blurDataURL}
-                className="flex flex-col md:flex-row gap-2 py-2"
-              >
+              <div key={highlight.image.blurDataURL} className="">
                 {/* <Image
                   src={highlight.image}
                   alt=""
