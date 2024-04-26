@@ -2,6 +2,7 @@ import { Card } from "@/components/ui/card";
 import codingTournament from "../public/images/coding-tournament.png";
 import starAward from "../public/images/star-award.png";
 import Image from "next/image";
+import Link from "next/link";
 
 const highlightsData = [
   {
@@ -22,14 +23,33 @@ export default function HeroSection() {
   return (
     <section className="max-w-4xl p-4 mx-auto">
       <div className="mb-4">
-        <h1 className="font-semibold text-5xl md:text-7xl">
-          HEY! I AM MAGHFOOR
+        <h1 className="font-semibold text-3xl md:text-5xl leading-10 md:leading-relaxed">
+          Engineer, Builder,
+          <br className="md:hidden" /> High Achiever.
         </h1>
-        <p>Full Stack Software Engineer</p>
-        <p>Currently At IAG Loyalty</p>
+        <div className="py-2">
+          <p>I am Maghfoor. A full stack software engineer.</p>
+          <p>
+            Currently at{" "}
+            <Link
+              href={"https://www.iagloyalty.com/"}
+              className="underline hover:text-blue-600"
+            >
+              IAG Loyalty
+            </Link>
+            , building products such as{" "}
+            <Link
+              href={"https://shopping.ba.com"}
+              className="underline hover:text-red-600"
+            >
+              British Airways Estore
+            </Link>{" "}
+            and more.
+          </p>
+        </div>
       </div>
       <div>
-        <h2 className="font-semibold text-3xl md:text-4xl">HIGHLIGHTS</h2>
+        <h2 className="font-semibold text-2xl md:text-3xl">HIGHLIGHTS</h2>
         <div className="flex flex-col md:flex-row gap-4 items-stretch">
           {highlightsData.map((highlight) => {
             return (

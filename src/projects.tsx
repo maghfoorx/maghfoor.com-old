@@ -25,7 +25,7 @@ export default function Projects() {
   return (
     <section className="max-w-4xl p-4 mx-auto">
       <div>
-        <h2 className="font-semibold text-3xl md:text-4xl">Projects</h2>
+        <h2 className="font-semibold text-2xl md:text-3xl">Projects</h2>
         <div className="">
           {projectsData.map((project) => {
             return (
