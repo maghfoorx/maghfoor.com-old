@@ -51,7 +51,7 @@ export default function HeroSection() {
         </div>
       </div>
       <div>
-        <h2 className="font-semibold text-2xl md:text-3xl">HIGHLIGHTS</h2>
+        <h2 className="font-semibold text-2xl md:text-3xl pb-2">HIGHLIGHTS</h2>
         <div className="flex flex-col md:flex-row gap-4 items-stretch">
           {highlightsData.map((highlight) => {
             return (
