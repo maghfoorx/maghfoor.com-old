@@ -3,6 +3,7 @@ import { Montserrat, Work_Sans, Ubuntu, Lexend } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/src/components/navbar";
 import Script from "next/script";
+import Footer from "@/components/footer";
 
 const montserrat = Lexend({ subsets: ["latin"] });
 
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body className={`${montserrat.className} antialiased border-box`}>
         <Navbar />
         {children}
+        <Footer />
         <Script
           defer
           src="https://static.cloudflareinsights.com/beacon.min.js"
