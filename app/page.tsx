@@ -5,7 +5,7 @@ export const runtime = "edge";
 
 export default async function Home() {
   return (
-    <main className="text-left mt-4 min-w-0">
+    <main className="mt-4 min-w-0 text-left">
       <HeroSection />
       <Projects />
     </main>

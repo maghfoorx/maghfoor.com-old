@@ -32,9 +32,9 @@ const projectsData = [
 
 export default function Projects() {
   return (
-    <section className="max-w-4xl p-4 mx-auto">
+    <section className="p-4 mx-auto max-w-4xl">
       <div>
-        <h2 className="font-semibold text-2xl md:text-3xl pb-2">Projects</h2>
+        <h2 className="pb-2 text-2xl font-semibold md:text-3xl">Projects</h2>
         <div className="flex flex-col gap-4 items-stretch">
           {projectsData.map((project) => {
             return (
@@ -43,21 +43,21 @@ export default function Projects() {
                 key={project.image.blurDataURL}
                 href={project.link}
                 target="_blank"
-                className="border-solid border-2 border-transparent hover:border-black rounded-md group"
+                className="rounded-md border-2 border-transparent border-solid hover:border-black group"
               >
-                <Card className="flex flex-col md:flex-row h-full">
+                <Card className="flex flex-col h-full md:flex-row">
                   <Image
                     src={project.image}
                     alt=""
                     width={400}
                     height={300}
-                    className="rounded-l-md object-contain"
+                    className="object-contain rounded-l-md"
                     loading="lazy"
                   />
-                  <div className="p-2 flex flex-col gap-2">
+                  <div className="flex flex-col gap-2 p-2">
                     <p className="font-bold">{project.title}</p>
                     <p>{project.description}</p>
-                    <p className="group-hover:underline text-blue-600">
+                    <p className="text-blue-600 group-hover:underline">
                       Check it out
                     </p>
                   </div>

@@ -6,8 +6,8 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 export default function Navbar() {
   return (
-    <header className="flex flex-row justify-between p-4 max-w-4xl mx-auto">
-      <nav className="flex flex-row items-center justify-center gap-4">
+    <header className="flex flex-row justify-between p-4 mx-auto max-w-4xl">
+      <nav className="flex flex-row gap-4 justify-center items-center">
         <motion.div
           initial={{ scale: 0 }}
           animate={{ rotate: 180, scale: 1 }}

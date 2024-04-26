@@ -21,9 +21,9 @@ const highlightsData = [
 
 export default function HeroSection() {
   return (
-    <section className="max-w-4xl p-4 mx-auto">
+    <section className="p-4 mx-auto max-w-4xl">
       <div className="mb-4">
-        <h1 className="font-semibold text-3xl md:text-5xl leading-10 md:leading-relaxed">
+        <h1 className="text-3xl font-semibold leading-10 md:text-5xl md:leading-relaxed">
           Engineer, Builder,
           <br className="md:hidden" /> High Achiever.
         </h1>
@@ -51,8 +51,8 @@ export default function HeroSection() {
         </div>
       </div>
       <div>
-        <h2 className="font-semibold text-2xl md:text-3xl pb-2">HIGHLIGHTS</h2>
-        <div className="flex flex-col md:flex-row gap-4 items-stretch justify-between">
+        <h2 className="pb-2 text-2xl font-semibold md:text-3xl">HIGHLIGHTS</h2>
+        <div className="flex flex-col gap-4 justify-between items-stretch md:flex-row">
           {highlightsData.map((highlight) => {
             return (
               <div key={highlight.image.blurDataURL} className="">
