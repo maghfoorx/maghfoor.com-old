@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Montserrat, Work_Sans, Ubuntu, Lexend } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/src/components/navbar";
 import Script from "next/script";
 
-const montserrat = Montserrat({ subsets: ["latin"] });
+const montserrat = Lexend({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Maghfoor",
