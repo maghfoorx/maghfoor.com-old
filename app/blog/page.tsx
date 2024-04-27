@@ -1,12 +1,13 @@
 import { Card } from "@/components/ui/card";
 import { getPostsMeta } from "@/actions/get-posts-meta";
 import Link from "next/link";
+import { Metadata } from "next";
 
 export const runtime = "edge";
 
 export const metadata: Metadata = {
-title: "Blog | Maghfoor"
-}
+  title: "Blog | Maghfoor",
+};
 
 export default async function BlogPage() {
   const results = await getPostsMeta();
