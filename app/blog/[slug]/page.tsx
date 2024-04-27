@@ -1,4 +1,5 @@
 import { getPostByName } from "@/actions/get-posts-meta";
+import { strToHtml } from "@/actions/str-to-html";
 import { notFound } from "next/navigation";
 
 export const runtime = "edge";
@@ -12,6 +13,14 @@ export default async function PostPage({
 
   if (!post) notFound();
 
-  console.log(post?.body, "is the post");
-  return <h1>hello</h1>;
+  const convertingToHtml = await strToHtml(post.body);
+
+  return (
+    <article
+      className="prose prose-quoteless prose-stone mx-auto prose-headings:text-primary text-black"
+      dangerouslySetInnerHTML={{
+        __html: convertingToHtml,
+      }}
+    ></article>
+  );
 }
