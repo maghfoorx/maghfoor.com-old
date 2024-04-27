@@ -1,5 +1,7 @@
 "use server";
 
+import fm, { FrontMatterResult } from "front-matter";
+
 type Meta = {
   id: string;
   title: string;
@@ -13,9 +15,9 @@ type BlogPost = {
 
 export async function getPostByName(
   fileName: string
-): Promise<BlogPost | null> {
+): Promise<FrontMatterResult<unknown> | null> {
   const result = await fetch(
-    `https://raw.githubusercontent.com/maghfoor-dev/blog-posts/git/trees/main/${fileName}`,
+    `https://raw.githubusercontent.com/maghfoor-dev/blog-posts/main/${fileName}`,
     {
       headers: {
         Accept: "application/vnd.github+json",
@@ -31,9 +33,9 @@ export async function getPostByName(
 
   if (rawMDX === "404: Not Found") return null;
 
-  return {
-    markdown: rawMDX,
-  };
+  const structuredPost = fm(rawMDX);
+
+  return structuredPost;
 }
 
 export async function getPostsMeta() {
@@ -61,10 +63,9 @@ export async function getPostsMeta() {
     const post = await getPostByName(file);
 
     if (post) {
-      const { markdown } = post;
-      posts.push(markdown);
+      posts.push(post);
     }
   }
 
-  return [];
+  return posts;
 }

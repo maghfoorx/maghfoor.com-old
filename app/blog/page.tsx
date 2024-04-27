@@ -4,7 +4,8 @@ import { getPostsMeta } from "@/actions/get-posts-meta";
 export const runtime = "edge";
 
 export default async function BlogPage() {
-  await getPostsMeta();
+  const results = await getPostsMeta();
+  console.log(results[0]);
 
   return (
     <main className="mt-4 min-w-0 text-left">
