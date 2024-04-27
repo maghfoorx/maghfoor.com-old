@@ -14,7 +14,7 @@ export default async function BlogPage() {
           return (
             <Link
               key={post.attributes.slug}
-              href={`/${post.attributes.slug}`}
+              href={`/blog/${post.attributes.slug}`}
               className="rounded-md border-2 border-transparent border-solid hover:border-black group"
             >
               <Card className="p-4">
