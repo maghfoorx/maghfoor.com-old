@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Maghfoor",
   description:
     "Software Engineer with extensive experience in building full stack applications. Checkout all the projects and things I am working on.",
+  metadataBase: new URL("https://maghfoor.com"),
 };
 
 export default function RootLayout({
