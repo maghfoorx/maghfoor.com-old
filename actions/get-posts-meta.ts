@@ -13,11 +13,17 @@ type BlogPost = {
   markdown: string;
 };
 
+type FrontMatter = {
+  title: string;
+  description: string;
+  isDraft: boolean;
+};
+
 export async function getPostByName(
   fileName: string
-): Promise<FrontMatterResult<unknown> | null> {
+): Promise<FrontMatterResult<FrontMatter> | null> {
   const result = await fetch(
-    `https://raw.githubusercontent.com/maghfoor-dev/blog-posts/main/${fileName}`,
+    `https://raw.githubusercontent.com/maghfoor-dev/blog-posts/main/${fileName}?v=1`,
     {
       headers: {
         Accept: "application/vnd.github+json",
@@ -33,7 +39,7 @@ export async function getPostByName(
 
   if (rawMDX === "404: Not Found") return null;
 
-  const structuredPost = fm(rawMDX);
+  const structuredPost: FrontMatterResult<FrontMatter> = fm(rawMDX);
 
   return structuredPost;
 }

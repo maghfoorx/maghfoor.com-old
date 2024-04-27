@@ -1,3 +1,4 @@
+import { Card, CardHeader } from "@/components/ui/card";
 import TestPage from "./page.mdx";
 import { getPostsMeta } from "@/actions/get-posts-meta";
 
@@ -9,9 +10,16 @@ export default async function BlogPage() {
 
   return (
     <main className="mt-4 min-w-0 text-left">
-      <article className="p-4 mx-auto max-w-3xl text-black prose prose-quoteless prose-stone prose-headings:text-primary">
+      {/*       <article className="p-4 mx-auto max-w-3xl text-black prose prose-quoteless prose-stone prose-headings:text-primary">
         <TestPage />
-      </article>
+      </article> */}
+      {results.map((post) => {
+        return (
+          <Card key={post.attributes?.title}>
+            <CardHeader>{post.attributes?.title}</CardHeader>
+          </Card>
+        );
+      })}
     </main>
   );
 }
