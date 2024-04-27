@@ -8,8 +8,8 @@ import { motion } from "framer-motion";
 
 export default function Navbar() {
   return (
-    <header className="flex flex-row justify-between p-4 mx-auto max-w-4xl">
-      <nav className="flex flex-row gap-4 justify-center items-center">
+    <header className="min-w-0">
+      <nav className="p-4 flex flex-row gap-4 items-center max-w-4xl mx-auto">
         <Link href={"/"} className="group flex items-center justify-center">
           <motion.div
             initial={{ scale: 0 }}

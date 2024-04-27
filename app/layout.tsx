@@ -20,7 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${montserrat.className} antialiased border-box`}>
+      <body
+        className={`${montserrat.className} antialiased border-box flex flex-col min-h-[100vh]`}
+      >
         <Navbar />
         {children}
         <Footer />

@@ -8,7 +8,7 @@ export const runtime = "edge";
 export default async function Home() {
   const posts = await getPostsMeta();
   return (
-    <main className="mt-4 min-w-0 text-left">
+    <main className="min-w-0 text-left">
       <HeroSection />
       <Projects />
       <BlogsSection posts={posts} />

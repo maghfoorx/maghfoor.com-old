@@ -8,7 +8,7 @@ export default async function BlogPage() {
   const results = await getPostsMeta();
 
   return (
-    <main className="mt-4 min-w-0 text-left">
+    <main className="min-w-0 text-left">
       <section className="flex flex-col gap-3 p-4 mx-auto max-w-4xl">
         {results.map((post) => {
           return (
