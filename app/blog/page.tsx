@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { getPostsMeta } from "@/actions/get-posts-meta";
+import Link from "next/link";
 
 export const runtime = "edge";
 
@@ -11,10 +12,18 @@ export default async function BlogPage() {
       <section className="flex flex-col gap-3 p-4 mx-auto max-w-4xl">
         {results.map((post) => {
           return (
-            <Card key={post.attributes.slug} className="p-4">
-              <p className="text-xl font-semibold">{post.attributes.title}</p>
-              <p>{post.attributes.description}</p>
-            </Card>
+            <Link
+              key={post.attributes.slug}
+              href={`/${post.attributes.slug}`}
+              className="rounded-md border-2 border-transparent border-solid hover:border-black group"
+            >
+              <Card className="p-4">
+                <p className="text-xl font-semibold group-hover:underline">
+                  {post.attributes.title}
+                </p>
+                <p>{post.attributes.description}</p>
+              </Card>
+            </Link>
           );
         })}
       </section>
