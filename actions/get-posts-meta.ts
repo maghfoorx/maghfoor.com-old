@@ -1,5 +1,6 @@
 "use server";
 
+import { FrontMatter } from "@/types";
 import fm, { FrontMatterResult } from "front-matter";
 
 type Meta = {
@@ -13,18 +14,11 @@ type BlogPost = {
   markdown: string;
 };
 
-type FrontMatter = {
-  title: string;
-  description: string;
-  slug: string;
-  isDraft: boolean;
-};
-
 export async function getPostByName(
   fileName: string
 ): Promise<FrontMatterResult<FrontMatter> | null> {
   const result = await fetch(
-    `https://raw.githubusercontent.com/maghfoor-dev/blog-posts/main/${fileName}?v=2`,
+    `https://raw.githubusercontent.com/maghfoor-dev/blog-posts/main/${fileName}?v=3`,
     {
       headers: {
         Accept: "application/vnd.github+json",
