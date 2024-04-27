@@ -17,7 +17,7 @@ export default async function PostPage({
 
   return (
     <article
-      className="prose prose-quoteless prose-stone mx-auto prose-headings:text-primary text-black"
+      className="prose prose-quoteless prose-stone mx-auto prose-headings:text-primary text-black px-4"
       dangerouslySetInnerHTML={{
         __html: convertingToHtml,
       }}
