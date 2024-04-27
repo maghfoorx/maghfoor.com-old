@@ -16,6 +16,7 @@ type BlogPost = {
 type FrontMatter = {
   title: string;
   description: string;
+  slug: string;
   isDraft: boolean;
 };
 
@@ -23,7 +24,7 @@ export async function getPostByName(
   fileName: string
 ): Promise<FrontMatterResult<FrontMatter> | null> {
   const result = await fetch(
-    `https://raw.githubusercontent.com/maghfoor-dev/blog-posts/main/${fileName}?v=1`,
+    `https://raw.githubusercontent.com/maghfoor-dev/blog-posts/main/${fileName}?v=2`,
     {
       headers: {
         Accept: "application/vnd.github+json",
@@ -72,6 +73,9 @@ export async function getPostsMeta() {
       posts.push(post);
     }
   }
+
+  //filter drafts
+  posts.filter((post) => !post.attributes.isDraft);
 
   return posts;
 }
