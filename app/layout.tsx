@@ -10,7 +10,7 @@ const montserrat = Lexend({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Maghfoor",
   description:
-    "Personal website and portfolio of Maghfoor Ahmed. A full stack Software Engineer.",
+    "Software Engineer with extensive experience in building full stack applications. Checkout all the projects and things I am working on.",
 };
 
 export default function RootLayout({
