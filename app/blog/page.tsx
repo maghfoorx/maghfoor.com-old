@@ -4,6 +4,10 @@ import Link from "next/link";
 
 export const runtime = "edge";
 
+export const metadata: Metadata = {
+title: "Blog | Maghfoor"
+}
+
 export default async function BlogPage() {
   const results = await getPostsMeta();
 
