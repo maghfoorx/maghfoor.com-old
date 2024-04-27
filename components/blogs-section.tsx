@@ -10,7 +10,7 @@ type BlogsSectionProperties = {
 export default function BlogsSection({ posts }: BlogsSectionProperties) {
   return (
     <section className="p-4 mx-auto max-w-4xl">
-      <h2 className="pb-2 text-2xl font-semibold md:text-3xl">Blogs</h2>
+      <h2 className="pb-2 text-2xl font-semibold md:text-3xl">Blog</h2>
       <div className="flex flex-col gap-4 items-stretch">
         {posts.map((post) => {
           return (
