@@ -3,4 +3,5 @@ export type FrontMatter = {
   description: string;
   slug: string;
   isDraft: boolean;
+  isSphorbOnly?: boolean;
 };

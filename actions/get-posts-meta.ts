@@ -59,7 +59,6 @@ export async function getPostsMeta() {
   const filesArray = repoFiletree.tree
     .map((object: { path: string }) => object.path)
     .filter((path: string) => path.endsWith(".mdx"));
-  // .filter((name: string) => name !== "the-millionaire-fastlane.mdx");
 
   const posts = [];
 
@@ -73,6 +72,5 @@ export async function getPostsMeta() {
 
   //filter drafts
   posts.filter((post) => !post.attributes.isDraft);
-
   return posts;
 }
