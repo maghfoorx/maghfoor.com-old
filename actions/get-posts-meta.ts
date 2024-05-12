@@ -15,17 +15,18 @@ type BlogPost = {
 };
 
 export async function getPostByName(
-  fileName: string
+  fileName: string,
 ): Promise<FrontMatterResult<FrontMatter> | null> {
+  const currentDay = new Date().getDay();
   const result = await fetch(
-    `https://raw.githubusercontent.com/maghfoor-dev/blog-posts/main/${fileName}?v=3`,
+    `https://raw.githubusercontent.com/maghfoor-dev/blog-posts/main/${fileName}?v=${currentDay}`,
     {
       headers: {
         Accept: "application/vnd.github+json",
         Authorization: `Bearer ${process.env.GITHUB_PERSONAL_ACESS_TOKEN}`,
         "X-GitHub-Api-Version": "2022-11-28",
       },
-    }
+    },
   );
 
   if (!result.ok) return null;
@@ -40,15 +41,16 @@ export async function getPostByName(
 }
 
 export async function getPostsMeta() {
+  const currentDay = new Date().getDay();
   const result = await fetch(
-    "https://api.github.com/repos/maghfoor-dev/blog-posts/git/trees/main?recursive=1",
+    `https://api.github.com/repos/maghfoor-dev/blog-posts/git/trees/main?recursive=1?v=${currentDay}`,
     {
       headers: {
         Accept: "application/vnd.github+json",
         Authorization: `Bearer ${process.env.GITHUB_PERSONAL_ACESS_TOKEN}`,
         "X-GitHub-Api-Version": "2022-11-28",
       },
-    }
+    },
   );
 
   if (!result.ok) return [];
@@ -57,6 +59,7 @@ export async function getPostsMeta() {
   const filesArray = repoFiletree.tree
     .map((object: { path: string }) => object.path)
     .filter((path: string) => path.endsWith(".mdx"));
+  // .filter((name: string) => name !== "the-millionaire-fastlane.mdx");
 
   const posts = [];
 
