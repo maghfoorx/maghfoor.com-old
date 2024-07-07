@@ -17,7 +17,6 @@ export default function BlogsSection({ posts }: BlogsSectionProperties) {
             (post) => !post.attributes.isDraft && !post.attributes.isSphorbOnly,
           )
           .map((post) => {
-            console.log(post.attributes);
             return (
               <Link
                 key={post.attributes.slug}
