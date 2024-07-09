@@ -15,7 +15,11 @@ export default async function BlogPage() {
   return (
     <main className="min-w-0 text-left">
       <section className="flex flex-col gap-3 p-4 mx-auto max-w-4xl">
-        {results.map((post) => {
+        {results
+          .filter(
+            (post) => !post.attributes.isDraft && !post.attributes.isSphorbOnly,
+          )
+          .map((post) => {
           return (
             <Link
               key={post.attributes.slug}
