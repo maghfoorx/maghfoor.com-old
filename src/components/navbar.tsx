@@ -42,6 +42,9 @@ export default function Navbar() {
             />
           </motion.div>
         </Link>
+        <Link href={"/blog"} className="hover:underline">
+          Blog
+        </Link>
         <Link
           href={"https://github.com/maghfoor-dev"}
           target="_blank"
@@ -55,9 +58,6 @@ export default function Navbar() {
           className="hover:underline"
         >
           LinkedIn
-        </Link>
-        <Link href={"/blog"} className="hover:underline">
-          Blog
         </Link>
         <Link
           href={"mailto:maghfoor.dev@gmail.com"}
